@@ -14,6 +14,8 @@ const ViewConnectors = ({ show, handleClose, element }) => {
             <Col>
               <b>Connector ID: </b> {element.connectorId}
             </Col>
+          </Row>
+          <Row className="mb-3">
             <Col>
               <b>Connector Name: </b> {element.connectorName}
             </Col>
@@ -22,6 +24,8 @@ const ViewConnectors = ({ show, handleClose, element }) => {
             <Col>
               <b>Key: </b> {element.key}
             </Col>
+          </Row>
+          <Row className="mb-3">
             <Col>
               <b>Instrument Name: </b> {element.instrumentName}
             </Col>
@@ -30,6 +34,8 @@ const ViewConnectors = ({ show, handleClose, element }) => {
             <Col>
               <b>Instrument Version: </b> {element.instrumentVersion}
             </Col>
+          </Row>
+          <Row className="mb-3">
             <Col>
               <b>Status: </b> {element.status === 1 ? "Active" : "Inactive"}
             </Col>

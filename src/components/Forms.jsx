@@ -11,6 +11,7 @@ const Forms = ({
     key: "",
     instrumentName: "",
     instrumentVersion: "",
+    status: "",
   },
   show,
   handleClose,
@@ -66,6 +67,7 @@ const Forms = ({
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(data);
     const registerData = {
       connector_name: data.connectorName,
       key: data.key,
@@ -78,6 +80,7 @@ const Forms = ({
       key: data.connectorName,
       instrument_name: data.instrumentName,
       instrument_version: data.instrumentVersion,
+      status: data.status,
     };
     if (optype === "add") {
       axios
@@ -120,6 +123,20 @@ const Forms = ({
       </Modal.Header>
       <Modal.Body>
         <Form>
+          {optype === "edit" ? (
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="formBasicConnectorId"
+            >
+              <Form.Label column sm={4}>
+                <b>Connector ID:</b>
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Text>{data.connectorId}</Form.Text>
+              </Col>
+            </Form.Group>
+          ) : null}
           <Form.Group
             as={Row}
             className="mb-3"
@@ -138,7 +155,17 @@ const Forms = ({
               ></Form.Control>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} className="mb-3" controlId="formBasicKey">
+          {optype === "edit" ? (
+            <Form.Group as={Row} className="mb-3" controlId="formBasicKey">
+              <Form.Label column sm={4}>
+                <b>Key:</b>
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Text>{data.key}</Form.Text>
+              </Col>
+            </Form.Group>
+          ) : null}
+          {/* <Form.Group as={Row} className="mb-3" controlId="formBasicKey">
             <Form.Label column sm={4}>
               <b>Key:</b>
             </Form.Label>
@@ -156,7 +183,7 @@ const Forms = ({
                 <i className="bi bi-arrow-clockwise"></i>
               </h2>
             </Col>
-          </Form.Group>
+          </Form.Group> */}
           <Form.Group
             as={Row}
             className="mb-3"
@@ -200,6 +227,23 @@ const Forms = ({
               ></Form.Control>
             </Col>
           </Form.Group>
+          {optype === "edit" ? (
+            <Form.Group as={Row} className="mb-3" controlId="formBasicStatus">
+              <Form.Label column sm={4}>
+                <b>Status:</b>
+              </Form.Label>
+              <Col sm={7}>
+                <Form.Select
+                  aria-label="Select Status"
+                  value={data.status}
+                  onChange={(e) => handleChange("status", e.target.value)}
+                >
+                  <option value="0">Inactive</option>
+                  <option value="1">Active</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+          ) : null}
           <Form.Group as={Row}>
             <Col sm={{ span: 10, offset: 3 }}>
               <Button

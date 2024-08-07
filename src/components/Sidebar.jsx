@@ -13,8 +13,18 @@ const routes = [
     icon: <FaHome />,
   },
   {
-    path: "/connector1",
-    name: "Connector 1",
+    path: "/connectors",
+    name: "Connectors",
+    icon: null,
+  },
+  {
+    path: "/instruments",
+    name: "Instruments",
+    icon: null,
+  },
+  {
+    path: "/viewlogs",
+    name: "View Logs",
     icon: null,
   },
 ];
