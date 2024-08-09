@@ -120,18 +120,20 @@ const InstrumentForms = ({
           <Form.Group as={Row}>
             <Col sm={{ span: 10, offset: 3 }}>
               <Button
-                className="form-submit-button"
-                onClick={handleSubmit}
-                type="submit"
-              >
-                {optype === "add" ? "Submit" : "Update"}
-              </Button>
-              <Button
                 className="form-reset-button"
+                variant="secondary"
                 onClick={handleReset}
                 type="submit"
               >
                 Reset
+              </Button>
+              <Button
+                className="form-submit-button"
+                variant="success"
+                onClick={handleSubmit}
+                type="submit"
+              >
+                {optype === "add" ? "Submit" : "Update"}
               </Button>
             </Col>
           </Form.Group>

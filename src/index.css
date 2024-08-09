@@ -63,7 +63,7 @@ button:focus-visible {
   background-color: rgb(67, 74, 128);
 }
 
-.form-reset-button {
+.form-submit-button {
   margin-left: 6rem;
 }
 

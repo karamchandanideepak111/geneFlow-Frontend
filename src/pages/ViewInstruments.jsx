@@ -21,7 +21,6 @@ const ViewInstruments = () => {
   const handleEditShow = () => setEditShow(true);
 
   const [colDefs, setColDefs] = useState([
-    { headerName: "Instrument ID", field: "instrument_id" },
     { headerName: "Instrument Name", field: "instrument_name" },
     { headerName: "Version", field: "version" },
     { headerName: "Vendor", field: "vendor" },
@@ -55,12 +54,10 @@ const ViewInstruments = () => {
 
   return (
     <>
-      <Container>
+      <Container fluid>
         <Row className="mb-3 d-flex flex-row">
           <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col className="p-2">
+          <Col xs={2} className="p-2 justify-item-end">
             <Button onClick={handleShow}>Register New Instrument</Button>
           </Col>
         </Row>

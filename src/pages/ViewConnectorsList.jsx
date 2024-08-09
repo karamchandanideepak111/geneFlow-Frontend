@@ -46,12 +46,10 @@ const ViewConnectorsList = () => {
 
   return (
     <>
-      <Container>
+      <Container fluid>
         <Row className="mb-3 d-flex flex-row">
           <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col className="p-2">
+          <Col xs={2} className="p-2 justify-item-end">
             <Button onClick={handleShow}>Register New Connector</Button>
           </Col>
         </Row>
